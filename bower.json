@@ -1,0 +1,30 @@
+{
+  "name": "modular-scale-less",
+  "version": "0.1.1",
+  "main": [
+    "modular-scale.less"
+  ],
+  "authors": [
+    "scottkellum <scott@scottkellum.com>",
+    "johnathancurry <johnathan@ointt.com>"
+  ],
+  "description": "A modular scale calculator for Less based on modularscale-js",
+  "keywords": [
+    "modularscale",
+    "modular",
+    "scale",
+    "calculator",
+    "typography",
+    "type",
+    "design",
+    "less"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
