@@ -1,0 +1,7 @@
+{
+  "name": "modular-scale-less",
+  "version": "v0.1.0",
+  "main": [
+    "stylesheets/_modular-scale.less"
+  ]
+}
