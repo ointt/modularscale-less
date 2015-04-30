@@ -1,6 +1,6 @@
 {
   "name": "modularscale-less",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/ointt/modularscale-less",
   "main": [
     "modular-scale.less"
@@ -29,6 +29,6 @@
     "tests"
   ],
   "dependencies": {
-    "modular-scale-less": "~0.1.0"
+    "modular-scale-less": "~0.2.0"
   }
 }

@@ -2,108 +2,108 @@
 
 .test-ms-function {
   .upscale {
-    .ms(2, 16, 1.6);
+    .ms(2, 16, @minor-sixth);
     value: 2;
     base: 16;
-    ratio: 1.6;
+    ratio: @minor-sixth;
     result: @ms;
 
-    .success when (@ms = 40.96000000000001px) {
+    .success when (@ms = 40.96000000000001em) {
       ms-upscale: pass;
     }
 
-    .fail when not (@ms = 40.96000000000001px) {
+    .fail when not (@ms = 40.96000000000001em) {
       ms-upscale: FAILED;
-      expected: 40.96000000000001px;
+      expected: 40.96000000000001em;
     }
   }
 
   .downscale {
-    .ms(-2, 16, 1.6);
+    .ms(-2, 16, @minor-sixth);
     value: -2;
     base: 16;
-    ratio: 1.6;
+    ratio: @minor-sixth;
     result: @ms;
 
-    .success when (@ms = 6.249999999999999px) {
+    .success when (@ms = 6.249999999999999em) {
       ms-downscale: pass;
     }
 
-    .fail when not (@ms = 6.249999999999999px) {
+    .fail when not (@ms = 6.249999999999999em) {
       ms-downscale: FAILED!;
-      expected: 6.249999999999999px;
+      expected: 6.249999999999999em;
     }
   }
 }
 
 .test-multiple-bases {
   .upscale {
-    .ms(2, 14 18, 1.125);
+    .ms(2, 14 18, @major-second);
     value: 2;
     bases: 14 18;
-    ratio: 1.125;
+    ratio: @major-second;
     result: @ms;
 
-    .success when (@ms = 15.75px) {
+    .success when (@ms = 15.75em) {
       ms-upscale-multi-bases: pass;
     }
 
-    .fail when not (@ms = 15.75px) {
+    .fail when not (@ms = 15.75em) {
       ms-upscale-multi-bases: FAILED!;
-      expected: 15.75px;
+      expected: 15.75em;
     }
   }
 
   .downscale {
-    .ms(-1, 14 18, 1.25);
+    .ms(-1, 14 18, @major-third);
     value: -1;
     base: 16;
-    ratio: 1.25;
+    ratio: @major-third;
     result: @ms;
 
-    .success when (@ms = 11.52px) {
+    .success when (@ms = 11.52em) {
       ms-downscale-multi-bases: pass;
     }
 
-    .fail when not (@ms = 11.52px) {
+    .fail when not (@ms = 11.52em) {
       ms-downscale-multi-bases: FAILED!;
-      expected: 11.52px;
+      expected: 11.52em;
     }
   }
 }
 
 .test-multiple-ratios {
   .upscale {
-    .ms(4, 12, 2.5 2);
+    .ms(4, 12, @major-tenth @octave);
     value: 4;
     base: 12;
-    ratios: 2.5 2;
+    ratios: @major-tenth @octave;
     result: @ms;
 
-    .success when (@ms = 75px) {
+    .success when (@ms = 75em) {
       ms-upscale-multi-ratios: pass;
     }
 
-    .fail when not (@ms = 75px) {
+    .fail when not (@ms = 75em) {
       ms-upscale-multi-ratios: FAILED!;
-      expected: 75px;
+      expected: 75em;
     }
   }
 
   .downscale {
-    .ms(-4, 12, 2.5 2);
+    .ms(-4, 12, @major-tenth @octave);
     value: -4;
     base: 12;
-    ratios: 2.5 2;
+    ratios: @major-tenth @octave;
     result: @ms;
 
-    .success when (@ms = 1.92px) {
+    .success when (@ms = 1.92em) {
       ms-downscale-multi-ratios: pass;
     }
 
-    .fail when not (@ms = 1.92px) {
+    .fail when not (@ms = 1.92em) {
       ms-downscale-multi-ratios: FAILED!;
-      expected: 1.92px;
+      expected: 1.92em;
     }
   }
 }

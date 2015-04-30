@@ -134,7 +134,7 @@ foo { font-size: 1.44em; }
 @media (min-width: 60em) { foo { font-size: 2.56em; } }
 ```
 
-## [Changelog](https://github.com/Team-Sass/modular-scale/releases)
+## [Changelog](https://github.com/ointt/modularscale-less/releases)
 
 ### Licence
 

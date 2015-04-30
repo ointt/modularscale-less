@@ -1,31 +1,30 @@
-@app: ~`app = {}`;
-@modular-scale: ~`msInit = (function () {
-    var msValue = 0;
-    var msBases = 1;
-    var msRatios = (1+ Math.sqrt(5))/2;
+@minor-second   : 1.067;
+@major-second   : 1.125;
+@minor-third    : 1.2;
+@major-third    : 1.25;
+@perfect-fourth : 1.333;
+@aug-fourth     : 1.414;
+@perfect-fifth  : 1.5;
+@minor-sixth    : 1.6;
+@golden-section : 1.618;
+@major-sixth    : 1.667;
+@minor-seventh  : 1.778;
+@major-seventh  : 1.875;
+@octave         : 2;
+@major-tenth    : 2.5;
+@major-eleventh : 2.667;
+@major-twelfth  : 3;
+@double-octave  : 4;
 
-    // Values
-    var minorSecond   = 1.067;
-    var majorSecond   = 1.125;
-    var minorThird    = 1.2;
-    var majorThird    = 1.25;
-    var perfectFourth = 1.333;
-    var augFourth    = 1.414;
-    var perfectFifth  = 1.5;
-    var minorSixth    = 1.6;
-    var goldenSection = 1.618;
-    var majorSixth    = 1.667;
-    var minorSeventh  = 1.778;
-    var majorSeventh  = 1.875;
-    var octave        = 2;
-    var majorTenth    = 2.5;
-    var majorEleventh = 2.667;
-    var majorTwelfth  = 3;
-    var doubleOctave  = 4;
+.ms(@value: 0, @bases: 1, @ratios: @golden-section, @unit: em) {
+  @ms: unit(`
+    (function ms(value, bases, ratios) {
+      var msValue = 0;
+      var msBases = 1;
+      var msRatios = (1+ Math.sqrt(5))/2;
 
-
-    // Unique via http://jsfiddle.net/gabrieleromanato/BrLfv/
-    var msUnique = function(origArr) {
+      // Unique via http://jsfiddle.net/gabrieleromanato/BrLfv/
+      var msUnique = function(origArr) {
 
         origArr = origArr.sort(function(a,b) {
           var x = a[0];
@@ -47,11 +46,9 @@
         }
 
         return newArr;
-    }
+      }
 
-    // Main function
-    app.ms = function (value, bases, ratios) {
-
+      // Main function
       if (typeof value === 'string') {
         value = 1;
       }
@@ -132,10 +129,6 @@
       }
 
       return r[Math.abs(value)][0];
-    }
-})(app)
-`;
-
-.ms(@value, @bases: @ms-bases, @ratios: @ms-ratios, @unit: "px") {
-  @ms: ~`(app.ms(@{value}, @{bases}, @{ratios})) + @{unit}`;
+    })(@{value}, @{bases}, @{ratios})`, @unit)
+  ;
 }
