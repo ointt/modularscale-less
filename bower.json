@@ -1,6 +1,6 @@
 {
   "name": "modularscale-less",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/ointt/modularscale-less",
   "main": [
     "modular-scale.less"
