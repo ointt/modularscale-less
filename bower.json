@@ -27,8 +27,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "modular-scale-less": "~0.2.0"
-  }
+  ]
 }
